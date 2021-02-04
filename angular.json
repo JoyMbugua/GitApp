@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "gittyApp"
+  "defaultProject": "gittyApp",
+  "cli": {
+    "analytics": "02f50bfd-27b8-45f3-a40f-522c4f48967a"
+  }
 }
