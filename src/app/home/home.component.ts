@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GittyService } from '../gitty.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  users:any;
+  constructor(private service: GittyService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.service.getRepos().subscribe(response => {
+      this.users = response;
+      console.log(this.users)
+    })
   }
 
 }

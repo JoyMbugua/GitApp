@@ -7,13 +7,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class GittyService {
   private apiKey = environment.apiKey;
+  private userName = 'JoyMbugua';
 
-  constructor(private http: HttpClient) { }
-
-  searchRepos(){
-
+  constructor(private http: HttpClient) { 
+    console.log('Gitt APP!!!')
   }
-  searchUsers(){
-    
+
+  getRepos(){
+    return this.http.get(`https://api.github.com/users/${this.userName}/repos?${this.apiKey}=`);
+  }
+  getUsers(){
+    return this.http.get(`https://api.github.com/users/${this.userName}?${this.apiKey}=`);
   }
 }
