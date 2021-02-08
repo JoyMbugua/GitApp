@@ -1,12 +1,13 @@
 * {
     font-size: 18px;
     font-family: 'Space Mono', monospace;
-    text-align: center;
+    
+
   
 }
 .container {
     display: grid;
-    /* grid-template-columns: 50% auto; */
+    grid-template-columns: 50% auto;
 }
 
 
@@ -15,9 +16,7 @@
     background: #8FBC8F;
     min-height: 100vh;
     background: #9dab86;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    
 }
 /* .dark {
   background: #000;

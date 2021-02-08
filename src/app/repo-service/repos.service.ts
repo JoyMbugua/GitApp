@@ -25,7 +25,7 @@ export class ReposService {
     let promise = new Promise((resolve, reject) => { this.http.get(`https://api.github.com/users/${username}/repos?access_token=${this.token}`
     ).toPromise().then(response => {
       this.repos = response;
-      console.log(this.repos)
+      // console.log(this.repos)
       resolve(response);
     }, error => {
       console.log(error);

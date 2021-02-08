@@ -7,54 +7,57 @@
   </div>
 
 <div *ngIf='user'>
-         
-    <div class="card">
-        <div class="card-header">
-          {{ user.login }}
-        </div>
-        <div class="card-body">
-          <div class="row">
-              <div class="col md-4">
-                  <img class="img-fluid img-thumbnail" [src]="user.avatar_url" alt="">
-              </div>
-              <div class="col -md-8">
-                  <div class="stats">
-                    <span class="badge badge-primary">{{ user.public_repos }} Public Repos</span>
-                    <span class="badge badge-success">{{ user.public_gists }} Public Gists</span>
-                    <span class="badge badge-danger">{{ user.followers }} Followers</span>
-                    <span class="badge badge-warning">{{ user.following }} Following</span>
-                    <ul class="list-group">
-                        <li class="list-group-item"><b>Username:</b> {{user.login }}</li>
-                        <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
-                        <li class="list-group-item"><b>Location:</b> {{ user.location }}</li>
-                        <li class="list-group-item"><b>Blog:</b> {{user.blog }}</li>
-                        <li class="list-group-item"><b>Joined:</b> {{ user.created_at |date }}</li>
-                      </ul>
+        <div class="row">
+            <!-- profile -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                      {{ user.login }}
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                          <div class="col md-4">
+                              <img class="img-fluid img-thumbnail" [src]="user.avatar_url" alt="">
+                          </div>
+                          <div class="col -md-8">
+                              <div class="stats">
+                                <span class="badge badge-primary">{{ user.public_repos }} Public Repos</span>
+                                <span class="badge badge-success">{{ user.public_gists }} Public Gists</span>
+                                <span class="badge badge-danger">{{ user.followers }} Followers</span>
+                                <span class="badge badge-warning">{{ user.following }} Following</span>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><b>Username:</b> {{user.login }}</li>
+                                    <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
+                                    <li class="list-group-item"><b>Location:</b> {{ user.location }}</li>
+                                    <li class="list-group-item"><b>Blog:</b> {{user.blog }}</li>
+                                    <li class="list-group-item"><b>Joined:</b> {{ user.created_at |date }}</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <a [href]="user.url" class="btn btn-secondary" target="_blank">View Full Profile</a>
+                    </div>
                   </div>
-              </div>
-          </div>
-          <a [href]="user.url" class="btn btn-secondary" target="_blank">View Full Profile</a>
-        </div>
-      </div>
-      <app-repo></app-repo>
-      <!-- REPOS -->
+            </div>
+            <!-- repos -->
+            <div class="col-md-6">
 
       <div *ngIf="repos">
         <div class="card">
-          <div class="card-header" appGitty> Repositories</div>
+          <div class="card-header"> Repositories</div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
                 <div *ngFor="let repo of repos">
                   <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                       <h4>
                         <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
                       </h4>
                       <p>{{ repo.description }}</p>
-                      <p>Created: {{ repo.created_at|timePassed }}</p>
+                      <p>Created: {{ repo.created_at|date }}</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <span class="badge badge-success"
                         >{{ repo.watchers }} Watchers</span
                       >
@@ -68,5 +71,11 @@
         </div>
        
       </div>
+            </div>
+        </div> 
+  
+  
+      <!-- REPOS -->
+
       
 </div>

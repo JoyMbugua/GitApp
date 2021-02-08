@@ -1,0 +1,18 @@
+* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 800px; */
+}
+.search {
+    /* max-width: 100%; */
+    /* margin: 10px; */
+    
+    font-size: 18px;
+}
+.search input {
+    padding: 5px 16px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 3px;
+}
