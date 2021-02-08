@@ -5,76 +5,75 @@
   
     </div>
   </div>
+<h1>This is nonsense!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
 
 <div *ngIf="user">
-        <div class="row">
-            <!-- profile -->
-            <div class="col-md-6">
-                <div class="card" appBgColor>
-                    <div class="card-header">
-                      <strong>{{ user.login }}</strong>
+  <div class="row">
+      <!-- profile -->
+      <div class="col-md-6">
+          <div class="card" appBgColor>
+              <div class="card-header"><strong>Profile</strong></div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col md-4">
+                        <img class="img-fluid img-thumbnail" [src]="user.avatar_url" alt="">
                     </div>
-                    <div class="card-body">
-                      <div class="row">
-                          <div class="col md-4">
-                              <img class="img-fluid img-thumbnail" [src]="user.avatar_url" alt="">
-                          </div>
-                          <div class="col -md-8">
-                              <div class="stats">
-                                <span class="badge badge-primary">{{ user.public_repos }} Public Repos</span>
-                                <span class="badge badge-success">{{ user.public_gists }} Public Gists</span>
-                                <span class="badge badge-danger">{{ user.followers }} Followers</span>
-                                <span class="badge badge-warning">{{ user.following }} Following</span>
-                                <ul class="list-group">
-                                    <li class="list-group-item"><b>Username:</b> {{user.name }}</li>
-                                    <li class="list-group-item"><b>User Login:</b> {{user.login }}</li>
-                                    <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
-                                    <li class="list-group-item"><b>Location:</b> {{ user.location }}</li>
-                                    <li class="list-group-item"><b>Blog:</b> {{user.blog }}</li>
-                                    <li class="list-group-item"><b>Joined:</b> {{ user.created_at |date }}</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                      <a [href]="user.html_url" class="btn btn-secondary" target="_blank">Full Profile</a>
+                    <div class="col -md-8">
+                        <div class="stats">
+                          <span class="badge badge-primary">{{ user.public_repos }} Public Repos</span>
+                          <span class="badge badge-success">{{ user.public_gists }} Public Gists</span>
+                          <span class="badge badge-danger">{{ user.followers }} Followers</span>
+                          <span class="badge badge-warning">{{ user.following }} Following</span>
+                          <ul class="list-group">
+                              <li class="list-group-item"><b>Username:</b> {{user.name }}</li>
+                              <li class="list-group-item"><b>User Login:</b> {{user.login }}</li>
+                              <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
+                              <li class="list-group-item"><b>Location:</b> {{ user.location }}</li>
+                              <li class="list-group-item"><b>Blog:</b> {{user.blog }}</li>
+                              <li class="list-group-item"><b>Joined:</b> {{ user.created_at |date }}</li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <!-- repos -->
-            <div class="col-md-6">
-
-      <div *ngIf="repos">
-        <div class="card" appBgColor>
-          <div class="card-header"> <strong>Portfolio</strong></div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div *ngFor="let repo of repos">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <h4>
-                        <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
-                      </h4>
-                      <p>{{ repo.description }}</p>
-                      <p>Created: {{ repo.created_at|timePassed }}</p>
-                    </div>
-                    <div class="col-md-4">
-                      <span class="badge badge-success">{{ repo.watchers }} Watchers</span>
-                      <span class="badge badge-primary">{{ repo.forks }} Forks</span>
-                    </div>
-                  </div>
                 </div>
+                <a [href]="user.html_url" class="btn btn-secondary" target="_blank">Full Profile</a>
+              </div>
+            </div>
+      </div>
+      <!-- repos -->
+      <div class="col-md-6">
+
+<div *ngIf="repos">
+  <div class="card" appBgColor>
+    <div class="card-header"> <strong>Portfolio</strong></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let repo of repos">
+            <div class="row">
+              <div class="col-md-8">
+                <h4>
+                  <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
+                </h4>
+                <p>{{ repo.description }}</p>
+                <p>Created: {{ repo.created_at|timePassed }}</p>
+              </div>
+              <div class="col-md-4">
+                <span class="badge badge-success">{{ repo.watchers }} Watchers</span>
+                <span class="badge badge-primary">{{ repo.forks }} Forks</span>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
-            </div>
-        </div> 
-  
-  
-     
+    </div>
+  </div>
+ 
+</div>
+      </div>
+  </div> 
 
-      
+
+
+
+
 </div>
