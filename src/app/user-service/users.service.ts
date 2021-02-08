@@ -10,15 +10,15 @@ export class UsersService {
 
   user: User;
   private token = environment.token;
-  private username = '';
+  
 
   constructor(private http: HttpClient) { }
 
   getUsers(username) {
-    this.username = username;
+  
     interface ApiResponse {
       login: string;
-      url: string;
+      html_url: string;
       avatar_url: string;
       public_repos: string;
       public_gists: string;
@@ -32,10 +32,10 @@ export class UsersService {
 
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`).toPromise().then(data => {
-        // console.log(data)
+        console.log(data)
       this.user = new User(
         data.login,
-        data.url, 
+        data.html_url, 
         data.avatar_url, 
         data.public_repos, 
         data.public_gists, 

@@ -1,8 +1,8 @@
 export class User {
-    
+
     constructor(
         public login: string, 
-        public url: string,
+        public html_url: string,
         public avatar_url: string,
         public public_repos: string, 
         public public_gists: string, 

@@ -1,0 +1,14 @@
+<main>
+    
+    <div class="search">
+        <h4>Search for Gifs</h4>
+        <input type="text" placeholder="Search for Gifs" #searchTerm>
+        <button class="btn btn-outline-info" (click)='performSearch(searchTerm.value)'>Search</button>
+    </div>
+    <div class="giphys">
+        <div class="gif" *ngFor='let result of results'>
+            <img [src]="result.images.downsized.url" alt="">
+        </div>
+    </div>
+    </main>
+    

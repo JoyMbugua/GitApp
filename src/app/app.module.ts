@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { TimePassedPipe } from './time-passed.pipe';
+import { SearchRepoComponent } from './search-repo/search-repo.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TimePassedPipe } from './time-passed.pipe';
     HomeComponent,
     NavbarComponent,
     FormComponent,
-    TimePassedPipe
+    TimePassedPipe,
+    SearchRepoComponent
   ],
   imports: [
     BrowserModule,

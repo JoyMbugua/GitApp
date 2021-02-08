@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GittyService } from '../gitty.service';
 import { ReposService } from '../repo-service/repos.service';
 import { User } from '../user-class/user';
 import { UsersService } from '../user-service/users.service';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -14,12 +15,17 @@ export class HomeComponent implements OnInit {
 
   user: User;
   repos: any;
-  constructor(private service: GittyService, private userService: UsersService, private repoService: ReposService) { }
+  
+  constructor(private http: HttpClient, private userService: UsersService, private repoService: ReposService) { 
+    
+  }
 
   
   ngOnInit() {
 
     this.search('JoyMbugua')
+
+    
   }
 
   search(username){
