@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GittyService } from '../gitty.service';
+import { ReposService } from '../repo-service/repos.service';
+import { User } from '../user-class/user';
+import { UsersService } from '../user-service/users.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,16 +12,13 @@ import { GittyService } from '../gitty.service';
 })
 export class HomeComponent implements OnInit {
 
-  users:any;
-  constructor(private service: GittyService) { }
+  user: User;
+  constructor(private service: GittyService, private userService: UsersService, private repoService: ReposService) { }
 
   ngOnInit() {
 
-    this.service.getUsers().subscribe(response => {
-      this.users = response;
-      console.log(this.users)
-      return this.users
-    })
+    this.userService.getUsers('JoyMbugua');
+    this.user = this.userService.user
   }
 
 }
