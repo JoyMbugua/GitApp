@@ -16,13 +16,16 @@ export class HomeComponent implements OnInit {
   repos: any;
   constructor(private service: GittyService, private userService: UsersService, private repoService: ReposService) { }
 
-  ngOnInit() {
-
-    this.userService.getUsers('JoyMbugua');
+  search(username){
+    this.userService.getUsers(username)
     this.user = this.userService.user;
 
-    this.repoService.getRepos('JoyMbugua');
+    this.repoService.getRepos(username)
     this.repos = this.repoService.repos
+  }
+  ngOnInit() {
+
+    this.search('JoyMbugua')
   }
 
 }
