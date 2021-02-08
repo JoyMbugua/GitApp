@@ -7,8 +7,8 @@ import { environment } from '../../environments/environment';
 })
 export class ReposService {
   repos: any;
-  private token = environment.token;
-  private username = '';
+  apiKey: string = environment.token;
+  username: any = '';
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class ReposService {
     this.username = username;
    
 
-    return this.http.get(`https://api.github.com/users/${username}/repos?access_token=${this.token}`);
+    return this.http.get("https://api.github.com/users/" + username +"/repos?access_token=" +this.apiKey);
   }
 
 

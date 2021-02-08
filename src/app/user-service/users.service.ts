@@ -9,7 +9,8 @@ import { User } from '../user-class/user';
 export class UsersService {
 
   user: User;
-  private token = environment.token;
+  apiKey: string = environment.token;
+
   
 
   constructor(private http: HttpClient) { }
@@ -32,7 +33,7 @@ export class UsersService {
     }
 
    
-      return this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
+      return this.http.get<ApiResponse>("https://api.github.com/users/" + username + "?access_token=" +this.apiKey)
 
   }
 }
