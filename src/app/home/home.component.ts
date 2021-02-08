@@ -13,12 +13,16 @@ import { UsersService } from '../user-service/users.service';
 export class HomeComponent implements OnInit {
 
   user: User;
+  repos: any;
   constructor(private service: GittyService, private userService: UsersService, private repoService: ReposService) { }
 
   ngOnInit() {
 
     this.userService.getUsers('JoyMbugua');
-    this.user = this.userService.user
+    this.user = this.userService.user;
+
+    this.repoService.getRepos('JoyMbugua');
+    this.repos = this.repoService.repos
   }
 
 }
