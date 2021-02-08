@@ -29,11 +29,25 @@ export class HomeComponent implements OnInit {
   }
 
   search(username){
-    this.userService.getUsers(username)
-    this.user = this.userService.user;
+    this.userService.getUsers(username).subscribe(data => {
+      this.user = new User(
+        data.login,
+        data.html_url, 
+        data.avatar_url, 
+        data.public_repos, 
+        data.public_gists, 
+        data.followers, 
+        data.following, 
+        data.location, 
+        data.email, 
+        data.blog, 
+        data.created_at);
+    })
 
-    this.repoService.getRepos(username)
-    this.repos = this.repoService.repos
+    this.repoService.getRepos(username).subscribe(response => {
+      this.repos = response;
+    })
+   
   }
 
 }

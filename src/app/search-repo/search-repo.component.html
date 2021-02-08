@@ -1,14 +1,19 @@
-<main>
-    
-    <div class="search">
-        <h4>Search for Gifs</h4>
-        <input type="text" placeholder="Search for Gifs" #searchTerm>
-        <button class="btn btn-outline-info" (click)='performSearch(searchTerm.value)'>Search</button>
-    </div>
-    <div class="giphys">
-        <div class="gif" *ngFor='let result of results'>
-            <img [src]="result.images.downsized.url" alt="">
+<div>
+    <h1>Search</h1>
+    <form>
+        <div class="form-group">
+           
+            <input type="text" [(ngModel)]="search" #name="ngModel" placeholder="Search Repositories" name="search">
+
+            <button (click)="performSearch()" class="btn btn-primary">Search</button>
         </div>
+    </form>
+
+    <div *ngFor='let repo of repos'>
+        
+        <a [href]="repo.html_url" target="_blank">{{ repo.full_name }}</a>
+        <p>Description: {{ repo.description }}</p>
+        <p>Langauge: {{ repo.language }}</p>
+        <p>Created: {{ repo.created_at|date }}</p>
     </div>
-    </main>
-    
+</div>

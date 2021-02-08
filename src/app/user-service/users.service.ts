@@ -30,30 +30,8 @@ export class UsersService {
       created_at: string;
     }
 
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`).toPromise().then(data => {
-        console.log(data)
-      this.user = new User(
-        data.login,
-        data.html_url, 
-        data.avatar_url, 
-        data.public_repos, 
-        data.public_gists, 
-        data.followers, 
-        data.following, 
-        data.location, 
-        data.email, 
-        data.blog, 
-        data.created_at);
-
-        resolve(data);
-      }, error => {
-        alert("oops!")
-        reject(error)
-      })
-    })
-    return promise;
-
+   
+      return this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
 
   }
 }
