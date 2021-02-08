@@ -5,14 +5,14 @@
   
     </div>
   </div>
-<H1>WHAT THE FUCK DUDE?!?!?!?!?!</H1>
+
 <div *ngIf="user">
         <div class="row">
             <!-- profile -->
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                      {{ user.login }}
+                      <strong>{{ user.login }}</strong>
                     </div>
                     <div class="card-body">
                       <div class="row">
@@ -44,7 +44,7 @@
 
       <div *ngIf="repos">
         <div class="card">
-          <div class="card-header"> Repositories</div>
+          <div class="card-header"> <strong>Portfolio</strong></div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
@@ -55,7 +55,7 @@
                         <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
                       </h4>
                       <p>{{ repo.description }}</p>
-                      <p>Created: {{ repo.created_at|date }}</p>
+                      <p>Created: {{ repo.created_at|timePassed }}</p>
                     </div>
                     <div class="col-md-4">
                       <span class="badge badge-success"

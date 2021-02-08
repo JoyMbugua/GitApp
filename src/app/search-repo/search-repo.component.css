@@ -1,0 +1,22 @@
+
+form {
+    display: flex;
+    align-items: center;
+    
+    /* max-width: 800px; */
+}
+.search {
+    /* max-width: 100%; */
+    /* margin: 10px; */
+    
+    font-size: 18px;
+}
+input {
+    padding: 5px 16px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+.result {
+    background-color: #e7e6e1;
+}

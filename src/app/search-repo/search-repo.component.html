@@ -1,17 +1,19 @@
-<div>
-    <h1>Search</h1>
+<div class="container">
+    <h2>Search for Random Repositories</h2>
+    <hr>
     <form>
         <div class="form-group">
            
-            <input type="text" [(ngModel)]="search" #name="ngModel" placeholder="Search Repositories" name="search">
+            <input size="50" type="text" [(ngModel)]="search" #name="ngModel" placeholder="Search Repositories" name="search">
 
-            <button (click)="performSearch()" class="btn btn-primary">Search</button>
+            
         </div>
+        <button (click)="performSearch()" class="btn btn-success"><i class="fa fa-search"></i></button>
     </form>
 
-    <div *ngFor='let repo of repos'>
-        
-        <a [href]="repo.html_url" target="_blank">{{ repo.full_name }}</a>
+    <div class="result" *ngFor='let repo of repos'>
+
+        <a [href]="repo.html_url" target="_blank"><h2>{{ repo.full_name }}</h2></a>
         <p>Description: {{ repo.description }}</p>
         <p>Langauge: {{ repo.language }}</p>
         <p>Created: {{ repo.created_at|date }}</p>
