@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
+import { TimePassedPipe } from './time-passed.pipe';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { FormComponent } from './form/form.component';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FormComponent
+    FormComponent,
+    TimePassedPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
