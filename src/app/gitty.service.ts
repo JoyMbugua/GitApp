@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GittyService {
-  private apiKey = environment.apiKey;
+  private apiKey = environment.token;
   private userName = 'JoyMbugua';
 
   constructor(private http: HttpClient) { 
