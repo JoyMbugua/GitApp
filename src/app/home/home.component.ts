@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     this.userService.getUsers(username).subscribe(data => {
       this.user = new User(
         data.login,
+        data.name,
         data.html_url, 
         data.avatar_url, 
         data.public_repos, 

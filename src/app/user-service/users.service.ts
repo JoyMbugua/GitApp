@@ -18,6 +18,7 @@ export class UsersService {
   
     interface ApiResponse {
       login: string;
+      name: string,
       html_url: string;
       avatar_url: string;
       public_repos: string;

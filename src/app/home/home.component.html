@@ -10,7 +10,7 @@
         <div class="row">
             <!-- profile -->
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" appBgColor>
                     <div class="card-header">
                       <strong>{{ user.login }}</strong>
                     </div>
@@ -26,7 +26,8 @@
                                 <span class="badge badge-danger">{{ user.followers }} Followers</span>
                                 <span class="badge badge-warning">{{ user.following }} Following</span>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><b>Username:</b> {{user.login }}</li>
+                                    <li class="list-group-item"><b>Username:</b> {{user.name }}</li>
+                                    <li class="list-group-item"><b>User Login:</b> {{user.login }}</li>
                                     <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
                                     <li class="list-group-item"><b>Location:</b> {{ user.location }}</li>
                                     <li class="list-group-item"><b>Blog:</b> {{user.blog }}</li>
@@ -43,7 +44,7 @@
             <div class="col-md-6">
 
       <div *ngIf="repos">
-        <div class="card">
+        <div class="card" appBgColor>
           <div class="card-header"> <strong>Portfolio</strong></div>
           <div class="card-body">
             <div class="row">
@@ -58,9 +59,7 @@
                       <p>Created: {{ repo.created_at|timePassed }}</p>
                     </div>
                     <div class="col-md-4">
-                      <span class="badge badge-success"
-                        >{{ repo.watchers }} Watchers</span
-                      >
+                      <span class="badge badge-success">{{ repo.watchers }} Watchers</span>
                       <span class="badge badge-primary">{{ repo.forks }} Forks</span>
                     </div>
                   </div>
