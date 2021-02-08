@@ -13,9 +13,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.service.getRepos().subscribe(response => {
+    this.service.getUsers().subscribe(response => {
       this.users = response;
       console.log(this.users)
+      return this.users
     })
   }
 

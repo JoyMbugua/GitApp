@@ -7,18 +7,23 @@
         <div class="col-md-4">
             <h1>Column1</h1>
 
-            <br>
-            <br>
-            <img src="" alt="">
-            <h2>User Name:</h2>
-            <h3>Following: </h3>
-            <h3>Followers: </h3>
+           <div class="container">
+               <form action=""></form>
+           </div>
+            
         </div>
        
        <div class="col-md-8">
         <div class="container light">
        
-            <h1 class="form-caption">Add Your Favorite Quote:</h1>
+            <div class="container">
+                <img class="img-thumbnail" [src]="users.avatar_url" alt="">
+               <h2>User Name: {{ users.login }}</h2>
+               <h3>Repositories: {{ users.public_repos }}</h3>
+               <h3>Following: {{ users.following }} </h3>
+               <h3>Followers: {{users.followers }} </h3>
+               <button class="btn btn-primary">View Profile</button>
+               </div>
 
             <p>People who do not take risks make about two big mistakes in a year. People who take risks make about two big mistakes in a year..</p>
             <cite>Peter F. Drucker</cite>
