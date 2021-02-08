@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { TimePassedPipe } from './time-passed.pipe';
 import { SearchRepoComponent } from './search-repo/search-repo.component';
+import { BgColorDirective } from './bg-color.directive';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SearchRepoComponent } from './search-repo/search-repo.component';
     NavbarComponent,
     FormComponent,
     TimePassedPipe,
-    SearchRepoComponent
+    SearchRepoComponent,
+    BgColorDirective
   ],
   imports: [
     BrowserModule,
