@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchRepoComponent implements OnInit {
   repos: any
   search: any;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -16,9 +17,15 @@ export class SearchRepoComponent implements OnInit {
 
   performSearch(){
     
-    this.http.get(`https://api.github.com/search/repositories?q=${this.search}&sort=stars&order=desc`).subscribe(data => {
-    this.repos = data['items'];
-    console.log(this.repos)
+    let promise = new Promise((resolve, reject) => {
+      this.http.get(`https://api.github.com/search/repositories?q=${this.search}&sort=stars&order=desc`).toPromise().then(data => {
+        this.repos = data['items'];
+        resolve(data)
+      }, error => {
+        alert("Something seems wrong:(")
+        reject(error)
+      })
     })
+   return promise;
   }
 }
